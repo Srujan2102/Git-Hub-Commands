@@ -1,0 +1,110 @@
+amend procedure 
+***************
+
+
+amend command is used to modify the most recent commit. This is helpful when you:
+
+1.Forgot to add a file
+
+2.Want to change the commit message
+
+3.Need to adjust content before pushing
+
+
+
+___________________________________________________________________________________________
+
+touch f1 f2
+
+git add f1
+
+git commit -m "f1"
+
+git add f2
+
+
+
+
+It is used to make changes in the latest commit we use amend command to send all files in a single commit 
+		
+
+$ git commit --amend 
+
+	here you can change the commit message 
+		* it opens a editor here we can see the latest commit that cameback to staging area so that two files can be commited as a single commit
+
+$ git push origin main 
+
+----------------------------------------------------------------------------
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/restore (main)
+$ touch f2 f3
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/restore (main)
+$ git add f2
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/restore (main)
+$ git commit -m "file2"
+[main f935ad8] file2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f2
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/restore (main)
+$ git add f3
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/restore (main)
+$ git log f2
+commit 128cfc92db22da1e11f05923c850c8cd326f7284 (HEAD -> main)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Sat Mar 29 11:14:07 2025 +0530
+
+    file2
+
+
+
+*************************************************************************
+By using git commit --amend 
+****************************************************************************
+
+
+
+
+file2
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Sat Mar 29 11:14:07 2025 +0530
+#
+# On branch main
+# Your branch is ahead of 'origin/main' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#       new file:   f2
+#       new file:   f3
+#
+~      
+
+**************************************************************************                  
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/restore (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 295 bytes | 295.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Srujan2102/restore.git
+   a10c8ba..128cfc9  main -> main
+
+
+
+
+
+
+
+
+

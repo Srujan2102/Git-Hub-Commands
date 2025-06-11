@@ -1,0 +1,111 @@
+soft reset ------> CS TO SA
+**********
+
+
+soft reset is used to push all the commits in a single line 
+
+
+
+------------------------------------------------------------------------------
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ ls
+README.md  f1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ touch f2 f3
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git add .
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git commit -m "newfile"
+
+[main 52e77df] newfile
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f2
+ create mode 100644 f3
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git status
+
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git log
+commit 52e77dfbf272d3067fb75770cf0e1bd886c6497f (HEAD -> main)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 17:03:03 2025 +0530
+
+    newfile
+
+commit b5f50345ed22bf816aea0b26cf1f7500165f3767 (origin/main, origin/HEAD)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 16:50:52 2025 +0530
+
+    savepractice
+
+commit 6592bdb9b8ce6358343e022e136a2453b052dd39
+Author: Srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 12:32:36 2025 +0530
+
+    Initial commit
+
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git reset --soft  b5f5034
+
+	*****************************************************************************
+	( for this use the below commit i.e (savepractice) then it rest the newfile
+	*****************************************************************************
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   f2
+        new file:   f3
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ touch f4
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git add .
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   f2
+        new file:   f3
+        new file:   f4
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git commit -m "newfile1"
+[main 93f8049] newfile1
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f2
+ create mode 100644 f3
+ create mode 100644 f4
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git push origin main
+
+
+
+
+--------------------------------------------------------------------------

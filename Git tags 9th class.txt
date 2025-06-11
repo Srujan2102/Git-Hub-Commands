@@ -1,0 +1,107 @@
+Git tags----> tags are commonly used to mark important points in the project history, such as version releases (e.g., v1.0, v2.5.1 )
+********
+	git tag is only created after the files creations only
+
+To maintain particular release codes of 
+	1.zip
+	2.tar.gzip
+
+
+modifying the code can be called as Enhancement
+
+continuous deployment ------- It is done in production regions
+continuous delivery ------- nonprod regions(ready for next release)
+
+continuousdelivery can move to continuous deploy but continuous deploy can not move to continuous delivery
+
+v.1.1.1 
+
+1st 1 ----- major version ---- 6months/1year
+2nd 1 ---- minor version ---- month/2months
+3rd 1 ----- patching ------ weekly
+
+sometimes they focus on major and minor versions only eg: v1.1
+
+v1.1.1  code is zipped in a particular place by using tags
+
+v2.2.2 code is ready to release 
+
+-------------------------------------------------------------------------------
+
+$ git tag v1.1.1 -------- used to create a tag 
+
+$ git tag --list ------- used to see the lists
+
+$ git push origin --tag/tags ------ creates a tag in the GitHub that zip the files
+
+$ git push origin --v1.1.1(particular tag) ---- used to push to GitHub 
+
+$ git tag --delete tagname(v2.2.2) ------- used to delete the tag in the local system
+
+$ git push origin --delete tagname(v1.1.1) ----- used to delete the tag in the GitHub 
+
+------------------------------------------------------------------------------
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/private (main)
+$ git tag v1.1.1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/private (main)
+$ git tag --list
+v1.1.1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/private (main)
+$ git push origin --tags
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Srujan2102/private.git
+ * [new tag]         v1.1.1 -> v1.1.1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/private (main)
+$ touch f1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/private (main)
+$ git add .
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/private (main)
+$ git commit -m "tags"
+[main cb2dc49] tags
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/private (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 261 bytes | 130.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Srujan2102/private.git
+   9b30f85..cb2dc49  main -> main
+
+
+
+
+
+
+
+
+
+
+
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/private (main)
+$ git tag v2.2.2
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/private (main)
+$ git tag --list
+v1.1.1
+v2.2.2
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/private (main)
+$ git push origin --tags
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Srujan2102/private.git
+ * [new tag]         v2.2.2 -> v2.2.2
+

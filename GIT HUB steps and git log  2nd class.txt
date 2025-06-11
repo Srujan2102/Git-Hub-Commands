@@ -1,0 +1,131 @@
+Git hub steps and git log
+*************************
+
+GIT (Global Information Tracker) HUB 
+
+$  git init
+
+$  git config --global user.name "srujan2102"
+
+$ git config --global user.email "srujan2118@gmail.com"
+
+$ git clone  "copy the link from git hub"
+
+$ cd directory from git hub
+
+$ touch filename
+
+$ git add files by individual or by (add.)
+$ git add . ----- adds all fies
+
+$ git status ------used to see created file or to see whether it is in working directory or staging area
+
+	*  untracked----- used to check new files
+	*  modified
+	*  deleted 
+
+$ git commit -m "comment name"
+
+$ git log ----- used to check the list of commits or commit history
+
+$ git push origin main(branch) 
+
+
+git config unset --global user.name ---- to unset the username
+
+				----> for this use credentials also here you can remove the username and password
+
+git config unset --global user.email ---- to unset the emaiil
+
+To exit from the gitbash keyboard use ------ q 
+
+git config --global --edit  ----> used to edit the configuration
+-----------------------------------------------------------------------------------------------
+
+
+
+$ git log --since=3days/1month/1year ---------------used to see history of 3days/1month/1year
+
+$ git log --since=YYYY-MM-DD --until=YYYY-MM-DD ----used to see particular dates
+
+$ git log --since=2025-01-01 --until=today ----- shows from 2025 to today
+
+$ git log --max-count=3 -------------used to show latest 3 commits
+
+$ git log --author=username(GitHub username) ----- used to see the author commit history
+
+$ git restore --staged filename --- if you had any changes in the file we use this command     	(only when it moves from WD to SA we can use the restore command)
+
+	$ git clone https://github.com/Srujan2102/practice.git
+
+  	  cd practice
+  
+  	  touch f1
+
+  	  git add .
+
+ 	  git status
+
+       	  git restore --staged f1  ---------used to make changes in the file
+
+   	  git status
+
+   	   vi f1
+
+	   git status
+
+    	   git add .
+  
+    	   git status
+
+   	   git commit -m "savepractice"
+
+  	    git push origin main
+
+----------------------------------------------------------------------------------------
+
+
+reset is of 3 types 
+	reset is used to delete the commit line
+	reset can only be used before commit stage only
+
+1. soft ------- changes from -----> CS to SA(changes)
+2. mixed ------ changes from -----> CS TO WD
+3. hard ------- used to remove particular commit
+
+ 
+
+	
+
+-----------------------------------------------------------------------------------------------
+
+
+
+$ git log --oneline ---- used to show all the commit history in a single line 
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/restore (main)
+$ git log --oneline
+17b5fab (HEAD -> main, origin/main, origin/HEAD) firstamend and secondamend
+128cfc9 file2
+a10c8ba c1
+faeadb7 Initial commit
+
+
+
+$ git log --oneline -integer(1,2.....) ------------------ it shows the history of particular lines 
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/restore (main)
+$ git log --oneline -2
+17b5fab (HEAD -> main, origin/main, origin/HEAD) firstamend and secondamend
+128cfc9 file2
+
+------------------------------------------------------------------------------------------------------------
+
+git log ---->The git log command shows a detailed history of commits in your repository. It helps you understand what changed, when, and by whom.
+
+
+
+
+

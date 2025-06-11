@@ -1,0 +1,119 @@
+Branching 
+*********
+
+Git branching allows you to work on multiple versions of your codebase at the same time — safely and efficiently. It’s one of the core features that makes Git so powerful for collaboration and experimentation.
+
+When you create a new branch, you’re creating a new pointer that can move independently from the main branch.
+Different environment codes using branches
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+From main branch we will create a feature branch with in it 
+
+
+dev ----- uat(user acceptance testing) - sit(system integration testing) -- preprod ---> continuous delivery
+dev --- uat -sit --prod ----> continuous deployment(used by the client)
+
+
+1. code promotions
+2. Microservices in docker 
+3. Regions of code (Dev, Uat, sit, preprod, prod)
+
+
+*code promotions*
+*****************
+
+How do you push your code to GitHub
+
+ A feature branch is created by the separate team there are going to give the feature branch details we will pull the feature branch and then we will make changes
+and we are going to raise a pull request 
+
+merging is done by different teams
+
+
+
+
+
+Fistly we have to create a new branch in the GitHub then 
+	
+	git pull  ----- it pulls the changes
+	
+	git branch -----used to see the list of branches and to see the current branch
+	 * main
+
+	git checkout branchname ------ used to change the branch
+
+	* ----- denotes the current branch
+
+After this make changes in the file by using vi editor
+
+-------------------------------------------------------------------------
+Deleting commands
+*****************	
+
+	git branch -d branchname -------- used to delete the branch with out any modification (like not merging with the main branch) just we have created
+
+	git branch -D branchname ----- used to delete the branch in local system
+
+	git push origin --delete branchname ----- used to delete the branch in github
+
+	To delete the branch firstly we have to move to the main branch then only we can delete the feature branch
+
+	We do not delete branches or tags in the real time 
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/firstrepo (main)
+$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 888 bytes | 111.00 KiB/s, done.
+From https://github.com/Srujan2102/firstrepo
+   f624bcd..b405fcb  main       -> origin/main
+ * [new branch]      new-branch -> origin/modifiedbranch
+Updating f624bcd..b405fcb
+Fast-forward
+ f1 | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/firstrepo (main)
+$ git branch
+* main
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/firstrepo (main)
+$ git checkout modifiedbranch
+M       f1
+branch 'modifiedbranch' set up to track 'origin/modifiedbranch'.
+Switched to a new branch 'modifiedbranch'
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/firstrepo (modifiedbranch)
+$ ls
+README.md  f1  f2
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/firstrepo (modifiedbranch)
+$ vi f1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/firstrepo (modifiedbranch)
+$ git add .
+warning: in the working copy of 'f1', LF will be replaced by CRLF the next time Git touches it
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/firstrepo (modifiedbranch)
+$ git commit -m "branche-changes"
+[modifiedbranch f7903cb] branche-changes
+ 1 file changed, 4 insertions(+)
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/firstrepo (modifiedbranch)
+$ git push origin modifiedbranch
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 356 bytes | 356.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Srujan2102/firstrepo.git
+   f624bcd..f7903cb  modifiedbranch -> modifiedbranch

@@ -1,0 +1,133 @@
+Stashing 
+********
+
+git stash temporarily saves your uncommitted changes (both staged and unstaged) so you can work on something else and come back later.
+
+✅ Why Use git stash?
+You’re in the middle of something, but need to:
+
+Pull the latest changes
+
+Switch branches
+
+Fix a bug quickly
+
+Instead of committing unfinished work, stash it, then restore it later.
+
+
+
+___________________________________________________________________________________________________
+
+It is used to store the temporary changes 
+
+we can create multiple stashes  
+
+Changes are made in workingdirectory it should not show me then I use the command ------> git stash
+
+git stash will not work for the untracked files
+
+It will work for the existing files only
+
+If you do not mention the stash id it will take default by --- stash@{0}
+
+----------------------------------------------------------------------------
+
+$ git stash -m "commit message" -----It is used to create the stash and commit message and store the date which was edited by vi editor 
+
+$ git stash apply ------ used to apply 
+
+$ git stash list --------used to show the list of stash which was stored 
+
+$ git stash clear -------- used to delete all data 
+
+$ git stash drop stash@{particular index} ------- used to  delete the particular stash 
+
+$ git stash drop ------removes the latest stash
+
+$ git stash pop stash@{2}(particular index value) ----- used to delete the stash id in stash list and apply to the changes into the file which was given
+
+------------------------------------------------------------------------------
+stash procedure
+***************
+
+$ touch stash1
+
+$ git status ----- shows the untracked file  
+
+$ ls 
+
+$ vi f1 ------ in this there is already some data
+
+$ git status ----- here it shows the modified message
+
+$ cat f1 ------ used to view the files 
+
+	ldfl
+	fkkjsldf
+	sdkfjs
+	sf
+*******************************************
+
+sujan is a devops learner
+
+********************************************
+
+$ git stash -m "stash-0"--------- it stores the recently add data in this 
+
+	
+$ cat f1
+
+	ldfl
+	fkkjsldf
+	sdkfjs
+	sf
+
+$ git stash list ------ shows the stash list
+
+$ git status -------- it doesn't show any changes but I changed the f1
+
+$  git stash apply ------ used to bring back the changes 
+
+$ git status
+
+$ cat f1 ----- shows the modified f1 
+
+	ldfl
+	fkkjsldf
+	sdkfjs
+	sf
+*******************************************
+
+sujan is a devops learner
+
+********************************************
+
+----------------------------------------------------------------------------------------
+
+
+PAT ----- Personal Access Token 
+
+   It is nothing but a password 
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+
+Collaboration
+*************
+
+GitHub enables developers to collaborate on the same project using Git and features like pull requests, branches, issues, reviews, and more. Here's a complete guide to how collaboration typically works on GitHub:
+
+🔁 Common Collaboration Workflow
+
+1. Fork or Clone
+2. Create a Branch
+3. Make Changes
+4. Commit & Push
+5. Open a Pull Request
+6. Review & Merge

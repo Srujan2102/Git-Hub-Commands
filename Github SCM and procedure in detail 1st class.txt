@@ -1,0 +1,65 @@
+ Source code management (scm)
+
+1. DVCS ----Distributed version control system (GitHub )
+	you can get the working copy of the github source code to our local system.
+
+2. CVCS ----Centralized version control system  (subversion)
+	you cannot get the working copy of the code to our local system but you can do the changes by directly connecting to the server. 
+
+	
+
+https://github.com/Srujan2102/firstrepo
+		    |		|
+		    |		|
+		(username)   (repositoryname)	
+
+APPLICATION CODE IS STORED IN REPOSITORY IN GITHUB
+
+
+2 ways to do changes in my repository 
+
+1. Directly you can do the changes by ( creating a new file in GitHub ) and ( You can also upload files )
+
+2. From the local system
+
+	by coping the link and clone it in local system
+
+------------------------------------------------------------------------------
+
+stages for git hub 
+
+workingdirectory--->staging area----> commitstage----> Gitrepository (remote repository)
+
+
+-------------------------------------------------------------------------------
+
+we have to make changes in WD like ----creating file (touch f1)
+
+then we have to send to SA  ----git add filename(f1)
+
+staging to commit ---- git commit -m "commitmessage"
+
+
+------------------------------------------------------------------
+
+Firstly we have to config username and email 
+
+WD TO SA ---- git add . 
+SA TO CS ---- git commit -m "commitmessage"
+CS TO REMOTE REPOSITORY ---- git push origin main 
+
+
+git log ------ used to check the history of the commits
+
+config is stored in commit stage 
+
+* whether it is in WD OR SA  we use ------ git status
+
+
+1. If we add a new file in working directory and then use -----git status ( It shows the message untracked files )
+
+2. If we remove the file ---rm filename ( It shows it is deleted )
+
+3. If we change anything in the file ( It shows the file is modified )
+ 
+

@@ -1,0 +1,175 @@
+Hard Reset 
+**********
+
+
+The changes done in the particular commit will be there in the working directory 
+
+All the above commits will get deleted in the git log
+
+
+------------------------------------------------------------------------------
+
+eg:
+
+
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ ls
+README.md  f1  file1  file2  file3
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ touch h1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ git add .
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ git commit -m "hard1"
+[main 6471482] hard1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 h1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ touch h2
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ git add .
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ git commit -m "hard2"
+[main 022bc26] hard2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 h2
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ touch h3 h4
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ git add .
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ git commit -m "hard 3 and 4"
+[main 57f0e3b] hard 3 and 4
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 h3
+ create mode 100644 h4
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ git log
+commit 57f0e3bc3bf4bf8d8489021b899b68cca1bbad52 (HEAD -> main)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 31 20:26:35 2025 +0530
+
+    hard 3 and 4
+
+commit 022bc26ecd2aa300d5f11261825f08784ad6db2e
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 31 20:26:10 2025 +0530
+
+    hard2
+
+commit 647148209680d8cca5e6c3a76959e2e6783d9345
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 31 20:25:53 2025 +0530
+
+    hard1
+
+commit 42a55e4e23d486a83f5ceee3d404a790ccbb6d4f (origin/main, origin/HEAD)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Feb 24 12:52:15 2025 +0530
+
+    test3
+
+
+****************************************************************************************************************
+		(for this use particular commit id and below commit will be seen above latest will not be seen)
+****************************************************************************************************************
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ git reset --hard 022bc26
+HEAD is now at 022bc26 hard2
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ git log
+commit 022bc26ecd2aa300d5f11261825f08784ad6db2e (HEAD -> main)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 31 20:26:10 2025 +0530
+
+    hard2
+
+commit 647148209680d8cca5e6c3a76959e2e6783d9345
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 31 20:25:53 2025 +0530
+
+    hard1
+
+commit 42a55e4e23d486a83f5ceee3d404a790ccbb6d4f (origin/main, origin/HEAD)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Feb 24 12:52:15 2025 +0530
+
+    test3
+
+commit a95e738b4fe6089da85c8998aa9a640f5ff13196
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Feb 24 12:47:24 2025 +0530
+
+    test2
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 392 bytes | 98.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/Srujan2102/myrepo1.git
+   42a55e4..022bc26  main -> main
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/myrepo1 (main)
+$ git log
+commit 022bc26ecd2aa300d5f11261825f08784ad6db2e (HEAD -> main, origin/main, origin/HEAD)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 31 20:26:10 2025 +0530
+
+    hard2
+
+commit 647148209680d8cca5e6c3a76959e2e6783d9345
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 31 20:25:53 2025 +0530
+
+    hard1
+
+commit 42a55e4e23d486a83f5ceee3d404a790ccbb6d4f
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Feb 24 12:52:15 2025 +0530
+
+    test3
+
+commit a95e738b4fe6089da85c8998aa9a640f5ff13196
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Feb 24 12:47:24 2025 +0530
+
+    test2
+
+commit 2e6d0d91ae9857d0cba7a0bfd3d642d87ca85845
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Feb 24 12:38:38 2025 +0530
+
+    test
+
+commit 0293d1eef213d096849bb2f99f06fb513bb4eac0
+Author: Srujan2102 <srujan2118@gmail.com>
+Date:   Mon Feb 24 12:31:39 2025 +0530
+
+    Create file1
+
+commit 4d40b79804226055b85f5cadd853d5736308cedc
+Author: Srujan2102 <srujan2118@gmail.com>
+Date:   Mon Feb 24 12:13:32 2025 +0530
+
+    Initial commit
+

@@ -1,0 +1,67 @@
+Rebase  --- It is mainly used to bring the linearity to the main branch from the feature branches
+******
+
+🧹 Keeps commit history clean
+
+🚫 Avoids unnecessary merge commits
+
+🔀 Moves commits to appear as if they were made after the latest commits on the target branch
+
+
+______________________________________________________________________________________________________
+
+we will use branching strategy in  rebase  to bring all the changes in the feature branch to main branch 
+
+we use ------ git rebase branchname
+
+
+
+--------------------------------------------------------
+
+firstly create a new branch in GitHub 
+
+$ git pull in gitbash ---- it pulls the changes made in the GitHub
+
+$ git checkout branchname ----- used to change the branches 
+
+$ git branch ---- shows the list of branches 
+
+
+
+
+*****************************************************
+			procedure
+
+******************************************************
+
+$ git checkout branch-1
+
+$ touch myfile1
+
+$ git add .
+
+$ git commit -m "myfile1"
+
+$ git push origin branch-1
+ 
+$ touch myfile2 
+
+$ git add .
+
+$ git commit -m "myfile2"
+
+$ git push origin branch-1
+
+$ git log ------- here it shows all commits of branch-1 history and mainbranch history also  
+
+$ git checkout main
+
+$ git log --------- here it shows all the commit history of main branch
+
+$ git rebase branch-1 -----copies all feature branches to the main branch
+
+
+
+
+
+

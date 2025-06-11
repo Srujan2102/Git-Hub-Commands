@@ -1,0 +1,162 @@
+Mixed reset ------> CS to WD
+***********
+
+Mixed reset is used to make changes  only on working directory thats why we use mixed 
+
+
+--------------------------------------------------------------------------------
+
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ touch h1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git add .
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git commit -m "mixedreset"
+[main bbe1a6e] mixedreset
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 h1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git log
+commit bbe1a6ef0f0ba66b23fe534bff225439ddebcebe (HEAD -> main)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 17:25:26 2025 +0530
+
+    mixedreset
+
+commit 93f8049a7ce343374e8ce257371642734b706dee (origin/main, origin/HEAD)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 17:12:05 2025 +0530
+
+    newfile1
+
+commit b5f50345ed22bf816aea0b26cf1f7500165f3767
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 16:50:52 2025 +0530
+
+    savepractice
+
+commit 6592bdb9b8ce6358343e022e136a2453b052dd39
+Author: Srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 12:32:36 2025 +0530
+
+    Initial commit
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git reset --mixed 93f8049a7
+
+************************************************************************************
+	for this use the below id i.e(newfile1)  then it comes to working directory
+*************************************************************************************
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git log
+commit 93f8049a7ce343374e8ce257371642734b706dee (HEAD -> main, origin/main, o
+rigin/HEAD)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 17:12:05 2025 +0530
+
+    newfile1
+
+commit b5f50345ed22bf816aea0b26cf1f7500165f3767
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 16:50:52 2025 +0530
+
+    savepractice
+
+commit 6592bdb9b8ce6358343e022e136a2453b052dd39
+Author: Srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 12:32:36 2025 +0530
+
+    Initial commit
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        h1
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ vi h1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git add .
+warning: in the working copy of 'h1', LF will be replaced by CRLF the next time Git touches it
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   h1
+
+
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git commit -m "newmessag"
+[main e070e22] newmessag
+ 1 file changed, 5 insertions(+)
+ create mode 100644 h1
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git log
+commit e070e22404c23272eae29bd2ace7e23f6fb1a116 (HEAD -> main)
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 17:46:35 2025 +0530
+
+    newmessag
+
+commit 93f8049a7ce343374e8ce257371642734b706dee (origin/main, origin/HEAD)
+							|
+							|
+				*   up to here stored in GitHub ****
+
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 17:12:05 2025 +0530
+
+    newfile1
+
+commit b5f50345ed22bf816aea0b26cf1f7500165f3767
+Author: srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 16:50:52 2025 +0530
+
+    savepractice
+
+commit 6592bdb9b8ce6358343e022e136a2453b052dd39
+Author: Srujan2102 <srujan2118@gmail.com>
+Date:   Mon Mar 17 12:32:36 2025 +0530
+
+    Initial commit
+
+sruja@Srujan21 MINGW64 ~/OneDrive/Desktop/practice (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 286 bytes | 286.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Srujan2102/practice.git
+   93f8049..e070e22  main -> main
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+

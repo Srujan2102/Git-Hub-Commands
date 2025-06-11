@@ -1,0 +1,22 @@
+Git pull,fetch,merge
+********************
+
+git pull =git fetch + git merge
+
+$ git pull ----- (will merge the changes from the github repository) It will pull the changes from GitHub and saves the changes in local or workingdirectory
+
+$ git fetch ------ used to check the changes with out disturbing the workingdirectory
+
+$ git merge --- used to merge if any changes are occurred
+
+
+		After the fetch only we have to merge
+
+
+Difference b/w git pull and git fetch 
+	git pull ----- will merge the changes from the GitHub repository
+	git fetch -----used to check the changes with out disturbing the workingdirectory
+
+
+
+--------------------------------------------------------------------------------------------------
