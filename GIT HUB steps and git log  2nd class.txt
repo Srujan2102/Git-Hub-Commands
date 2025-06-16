@@ -125,6 +125,10 @@ $ git log --oneline -2
 
 git log ---->The git log command shows a detailed history of commits in your repository. It helps you understand what changed, when, and by whom.
 
+--------------------------------------------------------------------------------------------------------------
+
+git cherry-pick is used to apply a specific commit from one branch onto another branch — without merging the whole branch.
+
 
 
 
